@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>digital clock</h1>
+    <div id="div"></div>
+
+    <script>
+        let hour =prompt("Enter current hours's");
+        let min = prompt("Enter current Minutes")
+        let sec = prompt("Enter current seconds");
+        setInterval(watch,1000);
+
+        function watch()
+        {
+            if(min < 10 && sec < 10)
+            document.getElementById('div').innerText = hour+":0"+min+":0"+sec;
+           else if(min < 10 && sec >= 10)
+            document.getElementById('div').innerText = hour+":0"+min+":"+sec;
+            else if(min >= 10 && sec < 10)
+            document.getElementById('div').innerText = hour+":"+min+":0"+sec;
+            else
+            document.getElementById('div').innerText = hour+":"+min+":"+sec;
+        sec++;
+        if(sec>= 60)
+        {
+            min++;
+            sec=0;
+        }
+        if(min>=60)
+        {
+            hour++;
+            min = 0;
+        }
+        if(hour > 12)
+        {
+            hour = 1;
+        }
+        }
+    </script>
+</body>
+</html>
